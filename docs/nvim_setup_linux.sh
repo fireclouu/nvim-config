@@ -20,6 +20,9 @@ ADD_TO_SYSTEM_PATH=true
 USE_ZSH_SHELL=true
 USE_BASH_SHELL=false
 
+# export to append for shell init file
+# export PATH=$PATH:$HOME/tools/nvim/bin/:$HOME/tools/nodejs/bin:$HOME/tools/ctags/bin:$HOME/tools/lua-language-server/bin:$HOME/tools/ripgrep
+
 if [[ ! -d "$HOME/packages/" ]]; then
     mkdir -p "$HOME/packages/"
 fi
@@ -36,7 +39,7 @@ if [[ "$INSTALL_ANACONDA" = true ]]; then
     CONDA_NAME=Anaconda.sh
     CONDA_LINK="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2021.11-Linux-x86_64.sh"
 else
-    CONDA_DIR=$HOME/tools/miniconda
+    CONDA_DIR=$HOME/miniconda3
     CONDA_NAME=Miniconda.sh
     CONDA_LINK="https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-py39_4.10.3-Linux-x86_64.sh"
 fi
@@ -92,7 +95,8 @@ fi
 NODE_DIR=$HOME/tools/nodejs
 NODE_SRC_NAME=$HOME/packages/nodejs.tar.gz
 # when download speed is slow, we can also use its mirror site: https://mirrors.ustc.edu.cn/node/v15.0.0/
-NODE_LINK="https://mirrors.ustc.edu.cn/node/v15.0.0/node-v15.0.0-linux-x64.tar.xz"
+# NODE_LINK="https://mirrors.ustc.edu.cn/node/v15.0.0/node-v15.0.0-linux-x64.tar.xz"
+NODE_LINK="https://nodejs.org/dist/v22.12.0/node-v22.12.0-linux-x64.tar.xz"
 if [[ -z "$(command -v node)" ]]; then
     echo "Install Node.js"
     if [[ ! -f $NODE_SRC_NAME ]]; then
