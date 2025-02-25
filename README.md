@@ -5,6 +5,11 @@ Tested on neovim version `>=v0.10.3`.
 ## Installation
 It supports linux based machines for now
 ```
-git clone https://github.com/fireclouu/nvim-config
+if [ -d "$HOME/.config/nvim" ]; then
+    cp -r "$HOME/.config/nvim $HOME/.config/nvim.old"
+fi
+mkdir -p "$HOME/.config/nvim"
+cd "$HOME/.config/nvim"
+git clone https://github.com/fireclouu/nvim-config .
 ./init.sh
 ```
