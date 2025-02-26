@@ -29,5 +29,4 @@ if [ $? -ne 0 ]; then
 fi
 
 apt-get install lua-language-server -y
-
 npm install -g bash-language-server vscode-html-languageserver-bin vscode-css-languageserver-bin intelephense typescript typescript-language-server
