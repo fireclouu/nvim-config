@@ -28,7 +28,6 @@ if [ $? -ne 0 ]; then
     apt-get install ripgrep -y
 fi
 
-npm install -g bash-language-server vscode-html-languageserver-bin vscode-css-languageserver-bin intelephense typescript-language-server
-
 apt-get install lua-language-server -y
-# brew install lua-language-server
+
+npm install -g bash-language-server vscode-html-languageserver-bin vscode-css-languageserver-bin intelephense typescript typescript-language-server
