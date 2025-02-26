@@ -3,7 +3,8 @@ My goal is to make it minimal as possible that it will work on most of my device
 Tested on neovim version `>=v0.10.3`.
 
 ## Installation
-It supports linux based machines for now
+### Linux
+Using this shell command to automate installation:
 ```
 if [ -d "$HOME/.config/nvim" ]; then
     cp -r "$HOME/.config/nvim $HOME/.config/nvim.old"
