@@ -77,11 +77,6 @@ return {
         -- mode is `n` by default. For more advanced options, check the section on key mappings
         keys = { "<C-a>", { "<C-x>", mode = "n" } },
     },
-    {
-        "williamboman/mason.nvim",
-        "williamboman/mason-lspconfig.nvim",
-        "neovim/nvim-lspconfig"
-    },
 
     {
         "onsails/lspkind.nvim",

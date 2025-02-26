@@ -25,8 +25,12 @@ source "$HOME/venv/myenv/bin/activate"
 python3 -m pip install pyright ripgrep
 if [ $? -ne 0 ]; then
     echo "Since pip fail, we check if ripgrep is available on default pm"
-    apt-get install ripgrep -y
+    sudo apt-get install ripgrep -y
 fi
 
-apt-get install lua-language-server -y
-npm install -g bash-language-server vscode-html-languageserver-bin vscode-css-languageserver-bin intelephense typescript typescript-language-server
+
+sudo apt-get install lua-language-server luarocks golang cargo ruby gem perl fd-find -y
+sudo luarocks install jsregexp
+npm install -g vscode-html-languageserver-bin vscode-css-languageserver-bin typescript typescript-language-server eslint htmlhint neovim
+nvim
+nvim --headless -c "MasonInstall lua-language-server python-lsp-server rust-analyzer typescript-language-server stimulus-language-server clangd intelephense bash-language-server" -c "qall"
