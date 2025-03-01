@@ -28,8 +28,7 @@ if [ $? -ne 0 ]; then
     sudo apt-get install ripgrep -y
 fi
 
-
-sudo apt-get install lua-language-server luarocks golang cargo ruby gem perl fd-find -y
+sudo apt-get install lua-language-server rust-analyzer luarocks golang cargo ruby gem perl fd-find -y
 sudo luarocks install jsregexp
 npm install -g vscode-html-languageserver-bin vscode-css-languageserver-bin typescript typescript-language-server eslint htmlhint neovim
 nvim
