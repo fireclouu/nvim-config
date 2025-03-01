@@ -25,11 +25,46 @@ source "$HOME/venv/myenv/bin/activate"
 python3 -m pip install pyright ripgrep
 if [ $? -ne 0 ]; then
     echo "Since pip fail, we check if ripgrep is available on default pm"
-    sudo apt-get install ripgrep -y
+    sudo apt-get install \
+        ripgrep \
+        -y
 fi
 
-sudo apt-get install lua-language-server rust-analyzer luarocks golang cargo ruby gem perl fd-find -y
-sudo luarocks install jsregexp
-npm install -g vscode-html-languageserver-bin vscode-css-languageserver-bin typescript typescript-language-server eslint htmlhint neovim
-nvim
-nvim --headless -c "MasonInstall lua-language-server python-lsp-server rust-analyzer typescript-language-server stimulus-language-server clangd intelephense bash-language-server" -c "qall"
+sudo apt-get install \
+    cargo \
+    fd-find \
+    gem \
+    golang \
+    lua-language-server \
+    luarocks \
+    perl \
+    ruby \
+    rust-analyzer \
+    -y
+
+sudo luarocks install \
+    jsregexp
+
+npm install -g \
+    eslint \
+    htmlhint \
+    neovim
+    typescript-language-server \
+    vscode-css-languageserver-bin typescript \
+    vscode-html-languageserver-bin
+
+# First Init
+nvim --headless -c "Lazy install" +qa
+nvim --headless -c "Lazy sync" +qa
+nvim --headless -c "Lazy clean" +qa
+
+nvim --headless -c "MasonInstall \
+    bash-language-server \
+    clangd \
+    intelephense \
+    jdtls \
+    lua-language-server \
+    python-lsp-server \
+    rust-analyzer \
+    stimulus-language-server \ # html, erb, php, blade
+    typescript-language-server" +qa
