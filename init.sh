@@ -66,5 +66,5 @@ nvim --headless -c "MasonInstall \
     lua-language-server \
     python-lsp-server \
     rust-analyzer \
-    stimulus-language-server \ # html, erb, php, blade
+    stimulus-language-server \
     typescript-language-server" +qa
